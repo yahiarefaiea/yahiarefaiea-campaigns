@@ -21,7 +21,6 @@ var gulp = require('gulp'),
     assets = 'includes',
     file = 'nuo',
     min = 'lite',
-    mails = 'mails',
     css = 'stylesheets',
     js = 'javascripts',
     img = 'images',
@@ -70,18 +69,6 @@ gulp.task('pug', function() {
     .pipe(gulp.dest(dest));
 });
 
-//  MAILS
-gulp.task('mails', function() {
-  return gulp.src(root+'/pug/mails/*.pug')
-    .pipe(pug({
-      pretty: true,
-      data: {
-        root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
-      }
-     }))
-    .pipe(gulp.dest(dest+'/'+mails));
-});
-
 
 //  BABEL
 gulp.task('babel', function() {
@@ -120,13 +107,6 @@ gulp.task('img', function() {
 });
 
 
-//  HTACCESS
-gulp.task('htaccess', function() {
-  return gulp.src('.htaccess')
-    .pipe(gulp.dest(dest));
-});
-
-
 //  WATCH
 gulp.task('watch', function() {
   gulp.watch([root+'/pug/**/*', root+'/data/**/*'], ['pug', 'mails', browserSync.reload]);
@@ -144,5 +124,5 @@ gulp.task('default', function() {
 
 //  RELEASE
 gulp.task('release', function() {
-  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'img', 'htaccess']);
+  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'img']);
 });
