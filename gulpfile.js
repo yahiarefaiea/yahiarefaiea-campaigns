@@ -44,18 +44,15 @@ var gulp = require('gulp'),
       root+'/babel/main.js'
     ];
 
-
 //  DELETE
 gulp.task('del', function() {
   return del.sync(dest);
 });
 
-
 //  BROWSER SYNC
 gulp.task('browserSync', function() {
   browserSync({server: {baseDir: dest}});
 });
-
 
 //  PUG
 gulp.task('pug', function() {
@@ -68,7 +65,6 @@ gulp.task('pug', function() {
      }))
     .pipe(gulp.dest(dest));
 });
-
 
 //  BABEL
 gulp.task('babel', function() {
@@ -84,7 +80,6 @@ gulp.task('babel', function() {
     .pipe(gulp.dest(dest+'/'+assets+'/'+js));
 });
 
-
 //  STYLUS
 gulp.task('stylus', function() {
   return gulp.src(root+'/stylus/app.styl')
@@ -99,13 +94,11 @@ gulp.task('stylus', function() {
     .pipe(gulp.dest(dest+'/'+assets+'/'+css));
 });
 
-
 //  IMAGES
 gulp.task('img', function() {
   return gulp.src(root+'/img/**/*')
     .pipe(gulp.dest(dest+'/'+assets+'/'+img));
 });
-
 
 //  WATCH
 gulp.task('watch', function() {
@@ -115,14 +108,7 @@ gulp.task('watch', function() {
   gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
 });
 
-
 //  DEFAULT
 gulp.task('default', function() {
   runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'img', 'browserSync', 'watch']);
-});
-
-
-//  RELEASE
-gulp.task('release', function() {
-  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'img']);
 });
