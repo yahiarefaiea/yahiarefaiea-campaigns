@@ -102,7 +102,7 @@ gulp.task('img', function() {
 
 //  WATCH
 gulp.task('watch', function() {
-  gulp.watch([root+'/pug/**/*', root+'/data/**/*'], ['pug', 'mails', browserSync.reload]);
+  gulp.watch([root+'/pug/**/*', root+'/data/**/*'], ['pug', browserSync.reload]);
   gulp.watch(root+'/babel/**/*', ['babel', browserSync.reload]);
   gulp.watch(root+'/stylus/**/*', ['stylus', browserSync.reload]);
   gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
@@ -110,5 +110,5 @@ gulp.task('watch', function() {
 
 //  DEFAULT
 gulp.task('default', function() {
-  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'img', 'browserSync', 'watch']);
+  runSequence(['del', 'pug', 'babel', 'stylus', 'img', 'browserSync', 'watch']);
 });
