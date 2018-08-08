@@ -60,7 +60,7 @@ gulp.task('pug', function() {
     .pipe(pug({
       pretty: true,
       data: {
-        main: JSON.parse(fs.readFileSync(root+'/data/main.json'))
+        app: JSON.parse(fs.readFileSync(root+'/data/app.json'))
       }
      }))
     .pipe(gulp.dest(dest));
