@@ -41,7 +41,7 @@ var gulp = require('gulp'),
     //  BABEL SRC
     babelSrc = [
       root+'/babel/lib/jquery-2.2.4.js',
-      root+'/babel/main.js'
+      root+'/babel/app.js'
     ];
 
 //  DELETE
