@@ -7,9 +7,6 @@
     "url": "git+https://github.com/YahiaRefaiea/rapid-gulp.git"
   },
   "author": "Yahia Refaiea <hello@yahiarefaiea.com>",
-  "bugs": {
-    "url": "https://github.com/YahiaRefaiea/rapid-gulp/issues"
-  },
   "homepage": "https://github.com/YahiaRefaiea/rapid-gulp#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
