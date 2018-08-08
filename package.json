@@ -7,6 +7,7 @@
     "url": "git+https://github.com/YahiaRefaiea/rapid-gulp.git"
   },
   "author": "Yahia Refaiea <hello@yahiarefaiea.com>",
+  "license": "MIT",
   "homepage": "https://github.com/YahiaRefaiea/rapid-gulp#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
