@@ -1,3 +1,3 @@
-var message = '"main.js" is loaded'
+var message = '"app.js" is loaded'
 
 console.log(message)
