@@ -28,13 +28,8 @@ var gulp = require('gulp'),
     comment =
       '/*\n'+
       ' *  <%= pkg.name %> <%= pkg.version %>\n'+
-      ' *  <%= pkg.description %>\n'+
-      ' *  \n'+
       ' *  Last update on: <%= new Date().getUTCFullYear() %>/'+
       '<%= new Date().getUTCMonth()+1 %>/<%= new Date().getUTCDate() %>\n'+
-      ' *  Released under the <%= pkg.license %> license.\n'+
-      ' *  Source code available on GitHub on:\n'+
-      ' *  <%= pkg.homepage %>\n'+
       ' */\n\n',
 
     //  BABEL SRC
@@ -86,6 +81,7 @@ gulp.task('php', function() {
 gulp.task('watch', function() {
   gulp.watch(root+'/pug/**/*', ['pug', browserSync.reload]);
   gulp.watch(root+'/babel/**/*', ['babel', browserSync.reload]);
+  gulp.watch(root+'/php/**/*', ['php', browserSync.reload]);
 });
 
 //  DEFAULT
