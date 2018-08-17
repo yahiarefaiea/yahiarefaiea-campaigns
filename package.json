@@ -1,14 +1,12 @@
 {
-  "name": "rapid-gulp",
-  "version": "0.0.1",
-  "description": "Rapid gulp environment",
+  "name": "email-sender",
+  "version": "1.0.0",
+  "description": "Email Sender",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YahiaRefaiea/rapid-gulp.git"
+    "url": "git+https://YahiaRefaiea@bitbucket.org/YahiaRefaiea/email-sender.git"
   },
   "author": "Yahia Refaiea <hello@yahiarefaiea.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/YahiaRefaiea/rapid-gulp#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",
