@@ -3,10 +3,14 @@ extends ../layouts/public
 block content
   - var basics = 'display: block;margin: 14px;font-family: courier;font-size: 14px;line-height: 21px;'
   - var inputWidth = 'width: 600px;'
-  - var inputHeight = 'height: 168px;'
+  - var textareaHeight = 'height: 168px;'
   
-  input(type='email' name='sender' placeholder='sender' style=basics + inputWidth)
-  input(type='text' name='subject' placeholder='subject' style=basics + inputWidth)
-  textarea(name='sender' placeholder='sender' style=basics + inputWidth + inputHeight)
-  textarea(name='message' placeholder='message' style=basics + inputWidth + inputHeight)
+  span(style=basics) from:
+  input(type='email' name='from' placeholder='Yahia Refaiea <hello@yahiarefaiea.com>' style=basics + inputWidth)
+  span(style=basics) subject:
+  input(type='text' name='subject' placeholder='Yahia Refaiea - Thanks for your love' style=basics + inputWidth)
+  span(style=basics) to:
+  textarea(name='to' placeholder='{JSON}' style=basics + inputWidth + textareaHeight)
+  span(style=basics) message:
+  textarea(name='message' placeholder='<HTML>' style=basics + inputWidth + textareaHeight)
   input(type='button' name='sender' value='Send campaign' style=basics)
