@@ -1,14 +1,12 @@
 extends ../layouts/public
 
 block content
-  - var display = 'display: block;'
-  - var fonts = 'font-family: courier;font-size: 14px;line-height: 21px;'
+  - var basics = 'display: block;margin: 14px;font-family: courier;font-size: 14px;line-height: 21px;'
   - var inputWidth = 'width: 600px;'
-  - var inputHeight = 'height: 90px;'
-  - var margin = 'margin: 14px;'
+  - var inputHeight = 'height: 168px;'
   
-  input(type='email' name='sender' placeholder='sender' style=display + margin + fonts + inputWidth)
-  input(type='text' name='subject' placeholder='subject' style=display + margin + fonts + inputWidth)
-  textarea(name='sender' placeholder='sender' style=display + margin + fonts + inputWidth + inputHeight)
-  textarea(name='message' placeholder='message' style=display + margin + fonts + inputWidth + inputHeight)
-  input(type='button' name='sender' value='Send campaign' style=display + margin + fonts)
+  input(type='email' name='sender' placeholder='sender' style=basics + inputWidth)
+  input(type='text' name='subject' placeholder='subject' style=basics + inputWidth)
+  textarea(name='sender' placeholder='sender' style=basics + inputWidth + inputHeight)
+  textarea(name='message' placeholder='message' style=basics + inputWidth + inputHeight)
+  input(type='button' name='sender' value='Send campaign' style=basics)
