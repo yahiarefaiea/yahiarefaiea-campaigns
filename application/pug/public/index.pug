@@ -6,15 +6,24 @@ block content
   - var textareaHeight = 'height: 168px;'
   - var float = 'float:left;'
   
+  //- FROM
   span(style=basics) from:
   input(type='text' name='from' placeholder='Full Name <hello@fullname.com>' style=basics + inputWidth
         value='Yahia Refaiea <hello@yahiarefaiea.com>')
+  
+  //- SUBJECT
   span(style=basics) subject:
   input(type='text' name='subject' placeholder='Full Name - Thanks for your love' style=basics + inputWidth
         value='Yahia Refaiea - Thanks for your love')
+  
+  //- TO
   span(style=basics) to:
   textarea(name='to' placeholder='{JSON}' style=basics + inputWidth + textareaHeight) [{"name":"Yahia","email":"yahia@comp.com"},{}]
+  
+  //- MESSAGE
   span(style=basics) message:
   textarea(name='message' placeholder='<HTML>' style=basics + inputWidth + textareaHeight) <span style="display: block; margin-bottom: 7px;">Thanks for your love.</span><span style="display: block; margin-top: 21px; font-size: 14px; line-height: 21px; color: #666;">Best wishes.</span>
+  
+  //- SUBMIT
   input(type='button' name='submit' value='submit campaign' style=basics + float)
   #callback(style=basics + float)
