@@ -21,9 +21,8 @@ var gulp = require('gulp'),
     assets = 'includes',
     file = 'nuo',
     min = 'lite',
-    css = 'stylesheets',
     js = 'javascripts',
-    img = 'images',
+    php = 'php',
 
     //  BANNER COMMENT
     comment =
@@ -58,10 +57,7 @@ gulp.task('browserSync', function() {
 gulp.task('pug', function() {
   return gulp.src(root+'/pug/public/*.pug')
     .pipe(pug({
-      pretty: true,
-      data: {
-        app: JSON.parse(fs.readFileSync(root+'/data/app.json'))
-      }
+      pretty: true
      }))
     .pipe(gulp.dest(dest));
 });
@@ -80,35 +76,19 @@ gulp.task('babel', function() {
     .pipe(gulp.dest(dest+'/'+assets+'/'+js));
 });
 
-//  STYLUS
-gulp.task('stylus', function() {
-  return gulp.src(root+'/stylus/app.styl')
-    .pipe(stylus({'use': koutoSwiss()}))
-    .pipe(banner(comment, {pkg:pkg}))
-    .pipe(rename(file+'.css'))
-    .pipe(gulp.dest(dest+'/'+assets+'/'+css))
-
-    .pipe(uglifycss())
-    .pipe(banner(comment, {pkg:pkg}))
-    .pipe(rename({extname:'.'+min+'.css'}))
-    .pipe(gulp.dest(dest+'/'+assets+'/'+css));
-});
-
-//  IMAGES
-gulp.task('img', function() {
-  return gulp.src(root+'/img/**/*')
-    .pipe(gulp.dest(dest+'/'+assets+'/'+img));
+//  PHP
+gulp.task('php', function() {
+  return gulp.src(root+'/php/**/*')
+    .pipe(gulp.dest(dest+'/'+assets+'/'+php));
 });
 
 //  WATCH
 gulp.task('watch', function() {
-  gulp.watch([root+'/pug/**/*', root+'/data/**/*'], ['pug', browserSync.reload]);
+  gulp.watch(root+'/pug/**/*', ['pug', browserSync.reload]);
   gulp.watch(root+'/babel/**/*', ['babel', browserSync.reload]);
-  gulp.watch(root+'/stylus/**/*', ['stylus', browserSync.reload]);
-  gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
 });
 
 //  DEFAULT
 gulp.task('default', function() {
-  runSequence(['del', 'pug', 'babel', 'stylus', 'img', 'browserSync', 'watch']);
+  runSequence(['del', 'pug', 'babel', 'php', 'browserSync', 'watch']);
 });
