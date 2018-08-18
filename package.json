@@ -1,10 +1,10 @@
 {
-  "name": "email-sender",
+  "name": "campaigns",
   "version": "1.0.0",
-  "description": "Email Sender",
+  "description": "Campaigns",
   "repository": {
     "type": "git",
-    "url": "git+https://YahiaRefaiea@bitbucket.org/YahiaRefaiea/email-sender.git"
+    "url": "git+https://YahiaRefaiea@bitbucket.org/YahiaRefaiea/campaigns.git"
   },
   "author": "Yahia Refaiea <hello@yahiarefaiea.com>",
   "devDependencies": {
