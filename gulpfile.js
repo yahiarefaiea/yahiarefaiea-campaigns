@@ -22,6 +22,7 @@ var gulp = require('gulp'),
     file = 'nuo',
     min = 'lite',
     js = 'javascripts',
+    img = 'images',
     php = 'php',
 
     //  BANNER COMMENT
@@ -71,6 +72,12 @@ gulp.task('babel', function() {
     .pipe(gulp.dest(dest+'/'+assets+'/'+js));
 });
 
+//  IMAGES
+gulp.task('img', function() {
+  return gulp.src(root+'/img/**/*')
+    .pipe(gulp.dest(dest+'/'+assets+'/'+img));
+});
+
 //  PHP
 gulp.task('php', function() {
   return gulp.src(root+'/php/**/*')
@@ -82,9 +89,10 @@ gulp.task('watch', function() {
   gulp.watch(root+'/pug/**/*', ['pug', browserSync.reload]);
   gulp.watch(root+'/babel/**/*', ['babel', browserSync.reload]);
   gulp.watch(root+'/php/**/*', ['php', browserSync.reload]);
+  gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
 });
 
 //  DEFAULT
 gulp.task('default', function() {
-  runSequence(['del', 'pug', 'babel', 'php', 'browserSync', 'watch']);
+  runSequence(['del', 'pug', 'babel', 'img', 'php', 'browserSync', 'watch']);
 });
