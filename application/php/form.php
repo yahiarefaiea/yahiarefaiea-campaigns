@@ -33,7 +33,7 @@ if (isset($_POST["dd"])) {
 	}
 
 	//	SEND REPORT
-	mail("me@yahiarefaiea.com","Campaign Report - ". $subject,"Message:<br>". $message ."<br>To:<br>". $to,$headers);
+	mail("me@yahiarefaiea.com","Campaign Report - ". $subject,"Message:<br>". $message ."<br>To:<br>". json_encode($to),$headers);
 
 	//  RESPONSE
 	$response_array['status']= 'success';
