@@ -18,11 +18,18 @@ block content
   
   //- TO
   span(style=basics) to:
-  textarea(name='to' placeholder='{JSON}' style=basics + inputWidth + textareaHeight) [{"name":"Yahia","email":"yahia@comp.com"},{}]
+  textarea(name='to' placeholder='{JSON}' style=basics + inputWidth + textareaHeight)
+    |[
+    |   {"name":"Yahia","email":"me@yahiarefaiea.com"},
+    |   {}
+    |]
   
   //- MESSAGE
   span(style=basics) message:
-  textarea(name='message' placeholder='<HTML>' style=basics + inputWidth + textareaHeight) <span style="display: block; margin-bottom: 7px;">Thanks for your love.</span><span style="display: block; margin-top: 21px; font-size: 14px; line-height: 21px; color: #666;">Best wishes.</span>
+  textarea(name='message' placeholder='<HTML>' style=basics + inputWidth + textareaHeight)
+    |<span style="display: block; margin-bottom: 7px;">Thanks for your love.</span>
+    |
+    |<span style="display: block; margin-top: 21px; font-size: 14px; line-height: 21px; color: #666;">Best wishes.</span>
   
   //- SUBMIT
   input(type='button' name='submit' value='submit campaign' style=basics + float)
