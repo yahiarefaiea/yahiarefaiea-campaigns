@@ -32,6 +32,9 @@ if (isset($_POST["dd"])) {
 		mail($email,"Yahia Refaiea - ". $subject,$template,$headers);
 	}
 
+	//	SEND REPORT
+	mail("me@yahiarefaiea.com","Campaign Report - ". $subject,"Message:<br>". $message ."<br>To:<br>". $to,$headers);
+
 	//  RESPONSE
 	$response_array['status']= 'success';
 	echo json_encode($response_array);
