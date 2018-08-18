@@ -88,11 +88,16 @@ gulp.task('php', function() {
 gulp.task('watch', function() {
   gulp.watch(root+'/pug/**/*', ['pug', browserSync.reload]);
   gulp.watch(root+'/babel/**/*', ['babel', browserSync.reload]);
-  gulp.watch(root+'/php/**/*', ['php', browserSync.reload]);
   gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
+  gulp.watch(root+'/php/**/*', ['php', browserSync.reload]);
 });
 
 //  DEFAULT
 gulp.task('default', function() {
   runSequence(['del', 'pug', 'babel', 'img', 'php', 'browserSync', 'watch']);
+});
+
+//  RELEASE
+gulp.task('release', function() {
+  runSequence(['del', 'pug', 'babel', 'img', 'php']);
 });
