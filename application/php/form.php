@@ -24,17 +24,12 @@ if (isset($_POST["dd"])) {
 
 		$template.= '<span style="display: block; margin-bottom: 7px;">Hi '. $name .'!</span>';
 
-		$template.= '<span style="display: block; margin-bottom: 7px;">Hi '. $name .'!</span>';
-
 		$template.= $message;
 
 		$template.= '</span></td></tr></table></td></tr></table></td></tr></table></body></html>';
 
-		//	UPDATE SUBJECT
-		$subject= 'Yahia Refaiea - '. $subject
-
 		//	SEND MAILS
-		mail($email,$subject,$template,$headers);
+		mail($email,"Yahia Refaiea - ". $subject,$template,$headers);
 	}
 
 	//  RESPONSE
